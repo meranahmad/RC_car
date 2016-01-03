@@ -46,17 +46,19 @@ while True:
         if BTN_DOWN in control:
             pass    
 
-        if BTN_UP in control:
+        elif BTN_UP in control:
             GPIO.output(LEFT, True)
             GPIO.output(RIGHT, True)
 
-        if BTN_LEFT in control:
+        elif BTN_LEFT in control:
           GPIO.output(LEFT, True)
+          GPIO.output(RIGHT, False)
 
-        if BTN_RIGHT in control:
+        elif BTN_RIGHT in control:
             GPIO.output(RIGHT, True)
+            GPIO.output(LEFT, False)
 
-        if BTN_STOP in control:
+        else:
             GPIO.output(LEFT, False)
             GPIO.output(RIGHT, False)
 
